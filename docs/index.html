@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<head>
+    <meta charset="UTF-8">
+    <!-- 添加BOM头确保UTF-8编码 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <title>贪吃蛇游戏</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        #game-container {
+            position: relative;
+        }
+        #game-canvas {
+            border: 2px solid #333;
+            background-color: #fff;
+        }
+        #score {
+            position: absolute;
+            top: -30px;
+            left: 0;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        #game-over {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div id="game-container">
+        <div id="score">分数: 0</div>
+        <canvas id="game-canvas" width="400" height="400"></canvas>
+        <div id="game-over">
+            <h2>游戏结束!</h2>
+            <p>你的最终得分: <span id="final-score">0</span></p>
+            <button onclick="startGame()">重新开始</button>
+        </div>
+        <div id="touch-controls">
+            <button class="arrow-btn" id="up-btn">↑</button>
+            <div>
+                <button class="arrow-btn" id="left-btn">←</button>
+                <button class="arrow-btn" id="right-btn">→</button>
+            </div>
+            <button class="arrow-btn" id="down-btn">↓</button>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
