@@ -120,7 +120,25 @@ function draw() {
             config.gridSize - 1,
             config.gridSize - 1
         );
+        
+        // 在蛇头位置添加zfy文字
+        if(index === 0) {
+            ctx.fillStyle = 'white';
+            ctx.font = '12px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText(
+                'zfy',
+                segment.x * config.gridSize + config.gridSize/2,
+                segment.y * config.gridSize + config.gridSize/2 + 4
+            );
+        }
     });
+
+    // 在左上角添加zy标识
+    ctx.fillStyle = 'rgba(0,0,0,0.7)';
+    ctx.font = '20px Arial';
+    ctx.textAlign = 'left';
+    ctx.fillText('zy', 10, 30);
 
     // 绘制食物
     ctx.fillStyle = '#e74c3c';
