@@ -154,12 +154,6 @@ document.getElementById('right-btn').addEventListener('touchstart', () => handle
 
 // 键盘控制
 document.addEventListener('keydown', (event) => {
-    const newDirection = keyMap[event.key];
-    if (!newDirection) return;
-    handleDirection(newDirection);
-});
-
-function handleDirection(newDirection) {
     const keyMap = {
         'ArrowUp': 'up',
         'ArrowDown': 'down',
@@ -170,9 +164,13 @@ function handleDirection(newDirection) {
         'a': 'left',
         'd': 'right'
     };
-
+    
     const newDirection = keyMap[event.key];
     if (!newDirection) return;
+    handleDirection(newDirection);
+});
+
+function handleDirection(newDirection) {
 
     // 防止180度转向
     const opposites = {
@@ -185,8 +183,7 @@ function handleDirection(newDirection) {
     if (opposites[newDirection] !== direction) {
         nextDirection = newDirection;
     }
-    event.preventDefault();
-});
+}
 
 // 初始化游戏
 startGame();
