@@ -1,4 +1,4 @@
-# 贪吃蛇游戏
+# snake for snake-year
 
 ## 部署指南
 1. 将项目推送到GitHub仓库
